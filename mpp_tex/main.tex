@@ -1,0 +1,88 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Dresden} 
+\usepackage{xcolor}
+\definecolor{mppgreen_light}{HTML}{006c66}
+\definecolor{mppgreen_dark}{HTML}{005555}
+\definecolor{mppgrey_light}{HTML}{a7a7a8}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{headlinecolor}{fg=white,bg=mppgreen_light}
+\setbeamercolor{footlinecolor}{fg=white,bg=mppgreen_light}
+\setbeamercolor{frametitle}{fg=black, bg=white}
+\setbeamercolor{block title}{fg=black, bg=white}
+\setbeamercolor{itemize item}{fg=mppgreen_light, bg=white}
+\setbeamercolor{title}{fg=white, bg=mppgreen_dark}
+%\setbeamercolor{pagenumber in foot}{options}
+
+\defbeamertemplate*{headline}{miniframes theme no subsection}
+{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head mycolor}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{headlinecolor}
+    \vskip1.6pt\insertnavigation{\paperwidth}\vskip4pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+%\setbeamercolor{headline}{fg=white, bg=mppgreen_light}
+
+
+
+\setbeamertemplate{footline}{%
+    \begin{beamercolorbox}[sep=1em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
+    %\includegraphics[scale=0.07,height=10pt]{images/image1.png}
+    \vskip-1.6pt%
+    \hspace{0.3cm}%
+    %\scriptsize{Page \insertframenumber / \inserttotalframenumber}
+    \hfill
+    %\includegraphics[scale=0.25,height=10pt]{images/image2.png}
+    \insertslidenavigationsymbol%
+    \insertframenavigationsymbol%
+    \insertsubsectionnavigationsymbol%
+    \insertsectionnavigationsymbol%
+    \insertdocnavigationsymbol%
+    \insertbackfindforwardnavigationsymbol%
+    \insertframenumber/\inserttotalframenumber
+    \vskip-1.6pt%
+    \end{beamercolorbox}%
+}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{siunitx}
+\usepackage{caption, subcaption}
+\usepackage{amsmath, amssymb, amsthm, amsbsy} 
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{tikz}
+\newcommand{\pdf}[1]{\mathrm{pdf}\left ( #1 \right )}
+\newcommand{\diff}[0]{\mathrm{d}}
+\newcommand{\Etrue}[0]{\ensuremath{E_{\nu}}}
+\newcommand{\Ereco}[0]{\ensuremath{E_{\mathrm{reco}}}}
+\DeclareSIUnit\jansky{Jy}
+
+
+\DeclareSIUnit{\erg}{erg}
+
+
+\setbeamertemplate{caption}[numbered]
+%\setbeamercolor{author in head/foot}{fg=Maroon}     
+%\setbeamercolor{institute in head/foot}{fg=Maroon}  
+%\setbeamercolor*{title}{fg=white, bg=Maroon}
+
+
+\title{Your title \\ here}
+\author{Me\inst{1} \and someone else\inst{1}}
+\institute{\inst{1} Max-Planck-Institut für Physik}
+
+
+\begin{document}
+\date{April 20, 420}
+\frame{\titlepage}
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=-.4cm,xshift=.3cm] at (current page.north east) {\includegraphics[height=1cm]{MPP_wide_D_green.png}};
+\end{tikzpicture}
+\vspace*{-.5cm}}
+\begin{frame}{Table of contents}
+\tableofcontents
+\end{frame}
+\end{document}
